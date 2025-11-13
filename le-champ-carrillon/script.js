@@ -22,9 +22,7 @@ const WORKER_ENDPOINT = 'https://worker-create-issue.benjamin-portal.workers.dev
     const allowedTypes = [
         'image/jpeg',
         'image/png',
-        'image/gif',
-        'image/webp',
-        'image/svg+xml'
+        'image/gif'
     ];
 
     const STORAGE_KEY = 'composer_show_details_v1';
@@ -76,7 +74,7 @@ const WORKER_ENDPOINT = 'https://worker-create-issue.benjamin-portal.workers.dev
                 accepted.push(f);
             } else {
                 const ext = (f.name.split('.').pop() || '').toLowerCase();
-                if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(ext)) {
+                if (['jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
                     accepted.push(f);
                 } else {
                     invalid.push(f.name);
