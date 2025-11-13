@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Composer — envoi automatique (préparé)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrap">
+        <h1>Mettre à jour le-champ-carrillon.fr</h1>
+
+        <div class="box" id="box-option">
+            <label for="option">Type</label>
+            <select id="option" aria-label="Choisir le type">
+                <option value="actualite">actualite</option>
+                <option value="galerie">galerie</option>
+                <option value="index">index</option>
+            </select>
+        </div>
+
+        <div class="box hidden" id="box-date">
+            <label for="date">Date</label>
+            <input id="date" type="date" />
+        </div>
+
+        <div class="box hidden" id="box-content">
+            <label for="content">Contenu</label>
+            <textarea id="content" placeholder="Écris le texte de l'actualité ici..."></textarea>
+        </div>
+
+        <div class="box" id="box-attachments">
+            <label>Pièces jointes (images uniquement)</label>
+            <div class="row">
+                <label class="btn-ghost" id="attach-btn" tabindex="0">
+                    Ajouter des pièces
+                </label>
+                <label id="clear-files" class="btn-ghost" title="Retirer toutes les pièces">Vider</label>
+                <div class="small" id="files-count">Aucune pièce</div>
+            </div>
+
+            <input id="file-input" type="file" accept="image/*" multiple/>
+
+            <div id="error-box" class="error" role="alert"></div>
+
+            <div class="thumbs" id="thumbs"></div>
+            <div class="note">Formats acceptés : JPG / PNG / GIF / WEBP / SVG.</div>
+        </div>
+
+        <div class="box" id="box-submission-code">
+            <label for="submission-code">Code</label>
+            <input id="submission-code" type="text" autocomplete="off" />
+        </div>
+
+        <div class="box" id="box-send">
+            <label>Envoyer</label>
+            <div class="row">
+                <button id="send-btn" class="btn-primary">Envoyer</button>
+            </div>
+            <div id="result-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
